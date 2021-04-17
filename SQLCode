@@ -4,7 +4,12 @@ CREATE TABLE five_artists(
 	artist_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	artist_name varchar(255),
 	artist_song varchar(255),
-	artist_image varchar(255)
+	artist_image varchar(255),
+	left_eye varchar(255),
+	mouth_left varchar(255),
+	mouth_right varchar(255),
+	nose varchar(255),
+	right_eye varchar(255)
 );
 
 INSERT INTO five_artists(artist_name, artist_song, artist_image) VALUES ("justin_bieber","sounds/justin_bieber.mp3","images/justin_bieber.jpg");
