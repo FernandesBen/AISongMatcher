@@ -1,0 +1,14 @@
+CREATE DATABASE music_artists;
+
+CREATE TABLE five_artists(
+	artist_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	artist_name varchar(255),
+	artist_song varchar(255),
+	artist_image varchar(255)
+);
+
+INSERT INTO five_artists(artist_name, artist_song, artist_image) VALUES ("justin_bieber","sounds/justin_bieber.mp3","images/justin_bieber.jpg");
+INSERT INTO five_artists(artist_name, artist_song, artist_image) VALUES ("shaq","sounds/shaq.mp3","images/shaq.jpg");
+INSERT INTO five_artists(artist_name, artist_song, artist_image) VALUES ("taylor_swift","sounds/taylor_swift.mp3","images/taylor_swift.jpg");
+INSERT INTO five_artists(artist_name, artist_song, artist_image) VALUES ("michael_jackson","sounds/michael_jackson.mp3","images/michael_jackson.jpg");
+INSERT INTO five_artists(artist_name, artist_song, artist_image) VALUES ("rihanna","sounds/rihanna.mp3","images/rihanna.jpg");
