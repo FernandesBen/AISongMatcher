@@ -1,6 +1,7 @@
 #output = list[sound file location, image file location, artist name]
 #artistID is output of matchFace
 #replace user and password as own
+import mysql.connector
 
 def getSongAndFace(artistID):
     db = mysql.connector.connect(
