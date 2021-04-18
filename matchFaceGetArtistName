@@ -1,0 +1,23 @@
+
+import mysql.connector
+
+def matchFaceGetArtistName(ile_re, ile_n, ile_lm, ire_n, ire_rm, irm_n, irm_lm, ilm_n):
+    db = mysql.connector.connect(
+        host = 'localhost',
+        user = 'chan',
+        password = 'chan',
+        database = 'music_artists'
+    )
+    cursor = db.cursor()
+    query = ("SELECT artist_name, le_re, le_n, le_lm, re_n, re_rm, rm_n, rm_lm, lm_n FROM five_artists;")
+    cursor.execute(query)
+    lowest_value = 9999
+    lowest_name = -1
+    for (artist_name, le_re, le_n, le_lm, re_n, re_rm, rm_n, rm_lm, lm_n) in cursor:
+        distance_sum = abs(ile_re-int(le_re))+abs(ile_n-int(le_n))+abs(ile_lm-int(le_lm))+abs(ire_n-int(re_n))+abs(ire_rm-int(re_rm))+abs(irm_n-int(rm_n))+abs(irm_lm-int(rm_lm))+abs(ilm_n-int(lm_n))
+        if distance_sum<lowest_value:
+            lowest_value = distance_sum
+            lowest_name = artist_name
+    cursor.close()
+    db.close()
+    return lowest_name
