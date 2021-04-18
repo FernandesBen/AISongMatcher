@@ -1,5 +1,7 @@
 #output = artist_name
 #artistID is output of matchFace
+import mysql.connector
+
 def getArtistName(artistID):
     db = mysql.connector.connect(
         host = 'localhost',
