@@ -1,0 +1,18 @@
+#output = artist_name
+#artistID is output of matchFace
+def getArtistName(artistID):
+    db = mysql.connector.connect(
+        host = 'localhost',
+        user = 'chan',
+        password = 'chan',
+        database = 'music_artists'
+    )
+    cursor = db.cursor()
+    query = ('SELECT artist_name FROM five_artists WHERE artist_id = {}').format(artistID)
+
+    cursor.execute(query)
+    for (artist_name) in cursor:
+        info = artist_name
+    cursor.close()
+    db.close()
+    return info
