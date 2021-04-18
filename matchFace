@@ -1,3 +1,19 @@
+'''
+le_re = left eye to right eye disance
+le_n = left eye to nose distance
+le_lm = left eye to left mouth distance
+re_n = right eye to nose distance
+re_rm = right eye to right mouth distance
+rm_n = right mouth to nose distance
+rm_lm = right mouth to left mouth distance
+lm_n = left mouth to nose distance
+inputs required in that order
+
+i prefix indicates input distances from user
+
+output = artist_id of closest match
+'''
+
 import mysql.connector
 def matchFace(ile_re, ile_n, ile_lm, ire_n, ire_rm, irm_n, irm_lm, ilm_n):
     db = mysql.connector.connect(
