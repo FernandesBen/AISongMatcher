@@ -1,0 +1,20 @@
+#output = list[sound file location, image file location, artist name]
+#artistID is output of matchFace
+#replace user and password as own
+
+def getSongAndFace(artistID):
+    db = mysql.connector.connect(
+        host = 'localhost',
+        user = '',
+        password = '',
+        database = 'music_artists'
+    )
+    cursor = db.cursor()
+    query = ('SELECT artist_song, artist_image, artist_name FROM five_artists WHERE artist_id = {}').format(artistID)
+
+    cursor.execute(query)
+    for (artist_song, artist_image, artist_name) in cursor:
+        infoList=[artist_song, artist_image, artist_name]
+    cursor.close()
+    db.close()
+    return infoList
